@@ -1,0 +1,7 @@
+<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :content %> 
+    <%= f.text_area :content, class: "form-control", rows: 2 %>
+    <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+<% end %>

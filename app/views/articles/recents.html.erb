@@ -1,0 +1,14 @@
+<% @recents_articles.each do |article| %>
+  <div>
+    <h2><%= article.title %></h2>
+    <p>
+      <%= link_to "Edit", edit_article_path(article), class:"text-muted action-link" %>
+      <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class:"text-muted action-link" %>
+      <span class="pull-right text-muted">
+        <%= article.created_at.strftime("%B - %d - %Y") %>, posted by <a href="#">Thuc</a>
+      </span>
+    </p>
+    <p><%= article.content.first(1000) %></p>
+    <%= link_to "Read more ...", article_path(article) %></br>
+  </div>
+<% end %>
